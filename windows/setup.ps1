@@ -6,6 +6,8 @@ winget install --id Bitwarden.Bitwarden --source winget
 
 # Research
 winget install --id JabRef.JabRef --source winget
+winget install --id Tailscale.Tailscale --source winget
+winget install --id DigitalScholar.Zotero --source winget
 
 # Development
 winget install --id Git.Git --source winget
