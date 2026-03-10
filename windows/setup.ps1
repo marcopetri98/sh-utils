@@ -3,6 +3,7 @@ winget install --id Microsoft.PowerShell --source winget
 winget install --id Mozilla.Firefox.DeveloperEdition --source winget
 winget install --id Adobe.Acrobat.Reader.64-bit --source winget
 winget install --id Bitwarden.Bitwarden --source winget
+winget install --id 7zip.7zip --source winget
 
 # Research
 winget install --id JabRef.JabRef --source winget
