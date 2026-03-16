@@ -21,8 +21,8 @@ winget install --id EclipseAdoptium.Temurin.25.JDK --source winget
 
 # Setup posh git to view diffs on branches
 Install-Module posh-git -Scope CurrentUser
-echo "Import-Module posh-git" >> $PROFILE
-echo "Add-PoshGitToProfile -AllHosts" >> $PROFILE
+Write-Output "Import-Module posh-git" >> $PROFILE
+Write-Output "Add-PoshGitToProfile -AllHosts" >> $PROFILE
 
 # Install uv for python
 powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
