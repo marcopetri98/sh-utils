@@ -16,6 +16,7 @@ winget install --id Git.Git --source winget
 winget install --id Docker.DockerDesktop --source winget
 winget install --id Microsoft.VisualStudioCode --source winget
 winget install --id ZedIndustries.Zed --source winget
+winget install --id MongoDB.Compass.Full --source winget
 winget install --id JGraph.Draw --source winget
 winget install --id EclipseAdoptium.Temurin.25.JDK --source winget
 
