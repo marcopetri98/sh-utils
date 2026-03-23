@@ -25,6 +25,7 @@ winget install --id Google.Antigravity --source winget
 winget install --id MongoDB.Compass.Full --source winget
 winget install --id JGraph.Draw --source winget
 winget install --id EclipseAdoptium.Temurin.25.JDK --source winget
+winget install --id Schniz.fnm --source winget
 
 # Messaging apps
 winget install --id Telegram.TelegramDesktop --source winget
@@ -32,7 +33,7 @@ winget install --id Telegram.TelegramDesktop --source winget
 # Setup posh git to view diffs on branches
 Install-Module posh-git -Scope CurrentUser
 Write-Output "Import-Module posh-git" >> $PROFILE
-Write-Output "Add-PoshGitToProfile -AllHosts" >> $PROFILE
+Write-Output "fnm env --use-on-cd --shell powershell | Out-String | Invoke-Expression" >> $PROFILE
 
 # Install uv for python
 powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
