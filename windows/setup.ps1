@@ -32,6 +32,7 @@ winget install --id Telegram.TelegramDesktop --source winget
 
 # Editing
 winget install --id GIMP.GIMP.3 --source winget
+winget install --id Inkscape.Inkscape --source winget
 
 # Setup posh git to view diffs on branches
 Install-Module posh-git -Scope CurrentUser
