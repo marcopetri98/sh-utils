@@ -8,8 +8,9 @@ winget install --id Greenshot.Greenshot --source winget
 winget install --id OBSProject.OBSStudio --source winget
 winget install --id Spotify.Spotify --source winget
 
-# Microsoft suite
+# Writing and office apps
 winget install --id Microsoft.Teams --source winget
+winget install --id Obsidian.Obsidian --source winget
 
 # Research
 winget install --id JabRef.JabRef --source winget
@@ -21,7 +22,6 @@ winget install --id Git.Git --source winget
 winget install --id Docker.DockerDesktop --source winget
 winget install --id Microsoft.VisualStudioCode --source winget
 winget install --id Bruno.Bruno --source winget
-winget install --id Google.Antigravity --source winget
 winget install --id MongoDB.Compass.Full --source winget
 winget install --id JGraph.Draw --source winget
 winget install --id EclipseAdoptium.Temurin.25.JDK --source winget
