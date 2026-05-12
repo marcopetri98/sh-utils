@@ -1,16 +1,19 @@
 # Basic windows functionality
 winget install --id Microsoft.PowerShell --source winget
-winget install --id Mozilla.Firefox.DeveloperEdition --source winget
+winget install --id Vivaldi.Vivaldi --source winget
 winget install --id Adobe.Acrobat.Reader.64-bit --source winget
 winget install --id Bitwarden.Bitwarden --source winget
 winget install --id 7zip.7zip --source winget
 winget install --id Greenshot.Greenshot --source winget
 winget install --id OBSProject.OBSStudio --source winget
+
+# Entertainment
 winget install --id Spotify.Spotify --source winget
 
 # Writing and office apps
 winget install --id Microsoft.Teams --source winget
 winget install --id Obsidian.Obsidian --source winget
+winget install --id TheDocumentFoundation.LibreOffice --source winget
 
 # Research
 winget install --id JabRef.JabRef --source winget
