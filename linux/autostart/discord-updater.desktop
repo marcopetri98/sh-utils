@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=Discord Autoupdater
+Comment=Checks and updates Discord on login
+Exec=bash -c "sleep 10; /home/__USER__/programs/discord.sh"
+Icon=discord
+X-GNOME-Autostart-enabled=true

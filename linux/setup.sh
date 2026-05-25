@@ -1,16 +1,52 @@
 #!/bin/bash
 
-# Update repositories
+# Update and add repositories
+curl -sL https://raw.githubusercontent.com/retorquere/zotero-pkg/master/install.sh | bash
 apt-get update
 
 # Install basic dependencies for linux
-apt install -y curl
+apt-get install -y curl
 snap install gedit
 
 # Install basic software dependencies
 snap install bitwarden
 snap install vivaldi
 
+# Entertainment
+snap install spotify
+
+# Writing and office apps
+snap install libreoffice
+
+# Research
+snap install tailscale
+apt-get install -y zotero
+
 # Development
-apt install -y git
+apt-get install -y git
+snap install docker
 snap install code --classic
+
+# Messaging apps
+snap install telegram-desktop
+
+# Give docker permissions to the user
+groupadd docker
+usermod -aG docker $SUDO_USER
+chown root:docker /var/run/docker.sock
+
+# Manage apps that are not shipped either with snap or apt
+echo "=============================="
+echo "Creating programs directory..."
+if [ -d "/home/$SUDO_USER/programs" ]; then
+    echo "Directory already exists. Skipping creation."
+else
+    mkdir /home/$SUDO_USER/programs
+    echo "Directory created successfully."
+fi
+# Discord
+echo "=============================="
+echo "Setting up Discord updater..."
+cp ./linux/installation_scripts/discord.sh /home/$SUDO_USER/programs/discord.sh
+chmod +x /home/$SUDO_USER/programs/discord.sh
+sed "s/__USER__/$SUDO_USER/g" ./linux/autostart/discord-updater.desktop > "/home/$SUDO_USER/.config/autostart/discord-updater.desktop"
