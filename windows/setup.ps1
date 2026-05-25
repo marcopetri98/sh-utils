@@ -6,6 +6,7 @@ winget install --id Bitwarden.Bitwarden --source winget
 winget install --id 7zip.7zip --source winget
 winget install --id Greenshot.Greenshot --source winget
 winget install --id OBSProject.OBSStudio --source winget
+winget install --id Mozilla.Thunderbird.it --source winget
 
 # Entertainment
 winget install --id Spotify.Spotify --source winget
@@ -29,6 +30,9 @@ winget install --id MongoDB.Compass.Full --source winget
 winget install --id JGraph.Draw --source winget
 winget install --id EclipseAdoptium.Temurin.25.JDK --source winget
 winget install --id Schniz.fnm --source winget
+
+# AI
+winget install --id Ollama.Ollama --source winget
 
 # Messaging apps
 winget install --id Telegram.TelegramDesktop --source winget
