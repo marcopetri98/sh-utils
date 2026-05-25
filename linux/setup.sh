@@ -5,7 +5,7 @@ curl -sL https://raw.githubusercontent.com/retorquere/zotero-pkg/master/install.
 apt-get update
 
 # Install basic dependencies for linux
-apt-get install -y curl
+apt-get install -y curl binutils
 snap install gedit
 
 # Install basic software dependencies
@@ -50,3 +50,9 @@ echo "Setting up Discord updater..."
 cp ./linux/installation_scripts/discord.sh /home/$SUDO_USER/programs/discord.sh
 chmod +x /home/$SUDO_USER/programs/discord.sh
 sed "s/__USER__/$SUDO_USER/g" ./linux/autostart/discord-updater.desktop > "/home/$SUDO_USER/.config/autostart/discord-updater.desktop"
+# Kdrive
+echo "=============================="
+echo "Setting up Kdrive cloud..."
+bash ./linux/installation_scripts/kdrive.sh
+sed "s/__USER__/$SUDO_USER/g" ./linux/applications/kdrive.desktop > "/home/$SUDO_USER/.local/share/applications/kdrive.desktop"
+apt install -y gnome-shell-extension-appindicator
