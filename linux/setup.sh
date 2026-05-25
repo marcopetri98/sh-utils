@@ -21,6 +21,7 @@ snap install libreoffice
 # Research
 snap install tailscale
 apt-get install -y zotero
+apt-get install -y filezilla
 
 # Development
 apt-get install -y git
