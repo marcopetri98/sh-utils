@@ -11,6 +11,7 @@ snap install gedit
 # Install basic software dependencies
 snap install bitwarden
 snap install vivaldi
+snap install thunderbird
 
 # Entertainment
 snap install spotify
