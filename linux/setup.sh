@@ -5,7 +5,7 @@ curl -sL https://raw.githubusercontent.com/retorquere/zotero-pkg/master/install.
 apt-get update
 
 # Install basic dependencies for linux
-apt-get install -y curl binutils
+apt-get install -y ca-certificates curl apt-transport-https binutils
 snap install gedit
 
 # Install basic software dependencies
@@ -44,15 +44,27 @@ else
     mkdir /home/$SUDO_USER/programs
     echo "Directory created successfully."
 fi
+
 # Discord
 echo "=============================="
 echo "Setting up Discord updater..."
 cp ./linux/installation_scripts/discord.sh /home/$SUDO_USER/programs/discord.sh
 chmod +x /home/$SUDO_USER/programs/discord.sh
 sed "s/__USER__/$SUDO_USER/g" ./linux/autostart/discord-updater.desktop > "/home/$SUDO_USER/.config/autostart/discord-updater.desktop"
+
 # Kdrive
 echo "=============================="
 echo "Setting up Kdrive cloud..."
 bash ./linux/installation_scripts/kdrive.sh
 sed "s/__USER__/$SUDO_USER/g" ./linux/applications/kdrive.desktop > "/home/$SUDO_USER/.local/share/applications/kdrive.desktop"
 apt install -y gnome-shell-extension-appindicator
+
+# AnyDesk
+echo "=============================="
+echo "Setting up AnyDesk..."
+install -m 0755 -d /etc/apt/keyrings
+curl -fsSL https://keys.anydesk.com/repos/DEB-GPG-KEY -o /etc/apt/keyrings/keys.anydesk.com.asc
+chmod a+r /etc/apt/keyrings/keys.anydesk.com.asc
+echo "deb [signed-by=/etc/apt/keyrings/keys.anydesk.com.asc] https://deb.anydesk.com all main" | tee /etc/apt/sources.list.d/anydesk-stable.list > /dev/null
+apt update
+apt install -y anydesk
