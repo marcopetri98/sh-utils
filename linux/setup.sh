@@ -4,8 +4,17 @@
 apt-get update
 
 # Install basic dependencies for linux
-apt-get install -y ca-certificates curl apt-transport-https binutils gnome-terminal
+apt-get install -y ca-certificates \
+    curl \
+    apt-transport-https \
+    binutils \
+    gnome-terminal \
+    network-manager-openconnect \
+    network-manager-openconnect-gnome \
+    flatpak \
+    cmake
 curl -sL https://raw.githubusercontent.com/retorquere/zotero-pkg/master/install.sh | bash
+flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 snap install gedit
 
 # Install basic software dependencies
@@ -31,6 +40,15 @@ snap install code --classic
 
 # Messaging apps
 snap install telegram-desktop
+
+# Windows execution of apps
+flatpak install flathub com.usebottles.bottles
+
+# Install uv for python
+curl -LsSf https://astral.sh/uv/install.sh | bash
+
+# Setup work specific environment
+bash work.sh
 
 # Give docker permissions to the user
 groupadd docker
