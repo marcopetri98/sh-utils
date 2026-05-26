@@ -1,11 +1,11 @@
 #!/bin/bash
 
 # Update and add repositories
-curl -sL https://raw.githubusercontent.com/retorquere/zotero-pkg/master/install.sh | bash
 apt-get update
 
 # Install basic dependencies for linux
-apt-get install -y ca-certificates curl apt-transport-https binutils
+apt-get install -y ca-certificates curl apt-transport-https binutils gnome-terminal
+curl -sL https://raw.githubusercontent.com/retorquere/zotero-pkg/master/install.sh | bash
 snap install gedit
 
 # Install basic software dependencies
