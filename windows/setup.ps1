@@ -51,6 +51,3 @@ Write-Output "fnm env --use-on-cd --shell powershell | Out-String | Invoke-Expre
 
 # Install uv for python
 powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
-
-# Install filezilla
-
