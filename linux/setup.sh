@@ -2,6 +2,7 @@
 
 # Update and add repositories
 apt-get update
+chmod +x installation_scripts/*.sh
 
 # Install basic dependencies for linux
 apt-get install -y ca-certificates \
@@ -35,7 +36,7 @@ apt-get install -y filezilla
 
 # Development
 apt-get install -y git
-snap install docker
+./installation_scripts/docker.sh
 snap install code --classic
 
 # Messaging apps
@@ -68,8 +69,7 @@ fi
 # Discord
 echo "=============================="
 echo "Setting up Discord updater..."
-cp ./linux/installation_scripts/discord.sh /home/$SUDO_USER/programs/discord.sh
-chmod +x /home/$SUDO_USER/programs/discord.sh
+cp -p ./linux/installation_scripts/discord.sh /home/$SUDO_USER/programs/discord.sh
 sed "s/__USER__/$SUDO_USER/g" ./linux/autostart/discord-updater.desktop > "/home/$SUDO_USER/.config/autostart/discord-updater.desktop"
 
 # Kdrive
