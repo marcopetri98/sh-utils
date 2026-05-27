@@ -31,6 +31,7 @@ winget install --id Schniz.fnm --source winget
 winget install --id JabRef.JabRef --source winget
 winget install --id Tailscale.Tailscale --source winget
 winget install --id DigitalScholar.Zotero --source winget
+winget install --id AnyDesk.AnyDesk --source winget
 Start-Process pwsh -ArgumentList '-NoProfile -Command "& {choco install filezilla -y}"' -Verb RunAs -Wait
 
 # AI
