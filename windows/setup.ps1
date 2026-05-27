@@ -16,12 +16,8 @@ winget install --id Microsoft.Teams --source winget
 winget install --id Obsidian.Obsidian --source winget
 winget install --id TheDocumentFoundation.LibreOffice --source winget
 
-# Research
-winget install --id JabRef.JabRef --source winget
-winget install --id Tailscale.Tailscale --source winget
-winget install --id DigitalScholar.Zotero --source winget
-
 # Development
+winget install --id Chocolatey.Chocolatey --source winget
 winget install --id Git.Git --source winget
 winget install --id Docker.DockerDesktop --source winget
 winget install --id Microsoft.VisualStudioCode --source winget
@@ -30,6 +26,12 @@ winget install --id MongoDB.Compass.Full --source winget
 winget install --id JGraph.Draw --source winget
 winget install --id EclipseAdoptium.Temurin.25.JDK --source winget
 winget install --id Schniz.fnm --source winget
+
+# Research
+winget install --id JabRef.JabRef --source winget
+winget install --id Tailscale.Tailscale --source winget
+winget install --id DigitalScholar.Zotero --source winget
+Start-Process pwsh -ArgumentList '-NoProfile -Command "& {choco install filezilla -y}"' -Verb RunAs -Wait
 
 # AI
 winget install --id Ollama.Ollama --source winget
@@ -48,3 +50,6 @@ Write-Output "fnm env --use-on-cd --shell powershell | Out-String | Invoke-Expre
 
 # Install uv for python
 powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
+
+# Install filezilla
+
