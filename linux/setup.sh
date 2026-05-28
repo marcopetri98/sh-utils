@@ -30,7 +30,7 @@ snap install spotify
 snap install libreoffice
 
 # Research
-# curl -fsSL https://tailscale.com/install.sh | bash
+curl -fsSL https://tailscale.com/install.sh | bash
 apt-get install -y zotero
 apt-get install -y filezilla
 
