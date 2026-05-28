@@ -30,13 +30,13 @@ snap install spotify
 snap install libreoffice
 
 # Research
-snap install tailscale
+# curl -fsSL https://tailscale.com/install.sh | bash
 apt-get install -y zotero
 apt-get install -y filezilla
 
 # Development
 apt-get install -y git
-./installation_scripts/docker.sh
+./linux/installation_scripts/docker.sh
 snap install code --classic
 
 # Messaging apps
@@ -47,9 +47,6 @@ flatpak install flathub com.usebottles.bottles
 
 # Install uv for python
 curl -LsSf https://astral.sh/uv/install.sh | bash
-
-# Setup work specific environment
-bash work.sh
 
 # Give docker permissions to the user
 groupadd docker
