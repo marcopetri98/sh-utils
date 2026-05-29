@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=Isaac Sim WebRTC Client
+Comment=Isaac Sim Livestream Client
+Exec=/home/__USER__/programs/isaacSim.AppImage --no-sandbox %U
+Icon=/home/__USER__/programs/isaacSim.png
+Terminal=false
+Categories=Development;Simulation;
+StartupWMClass=Isaac Sim WebRTC Streaming Client
