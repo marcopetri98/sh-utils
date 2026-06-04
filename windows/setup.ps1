@@ -8,6 +8,7 @@ winget install --id Greenshot.Greenshot --source winget
 winget install --id OBSProject.OBSStudio --source winget
 winget install --id Mozilla.Thunderbird.it --source winget
 winget install --id Microsoft.PowerToys --source winget
+winget install --id Nextcloud.NextcloudDesktop --source winget
 
 # Entertainment
 winget install --id Spotify.Spotify --source winget
