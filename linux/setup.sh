@@ -123,13 +123,6 @@ echo "Setting up Discord updater..."
 cp -p ./linux/installation_scripts/discord.sh /home/$SUDO_USER/programs/discord.sh
 sed "s/__USER__/$SUDO_USER/g" ./linux/autostart/discord-updater.desktop > "/home/$SUDO_USER/.config/autostart/discord-updater.desktop"
 
-# Kdrive
-echo "=============================="
-echo "Setting up Kdrive cloud..."
-bash ./linux/installation_scripts/kdrive.sh
-sed "s/__USER__/$SUDO_USER/g" ./linux/applications/kdrive.desktop > "/home/$SUDO_USER/.local/share/applications/kdrive.desktop"
-apt install -y gnome-shell-extension-appindicator
-
 # Isaac Sim App Launcher
 if [[ $ROBOTICS -eq 1 ]]; then
     echo "=============================="

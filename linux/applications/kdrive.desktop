@@ -1,9 +1,0 @@
-[Desktop Entry]
-Type=Application
-Name=kDrive
-Comment=Infomaniak Cloud Storage Client
-Exec=/home/__USER__/programs/kDrive.AppImage
-Icon=/home/__USER__/programs/kdrive.png
-Terminal=false
-Categories=Network;FileTransfer;Utility;
-StartupWMClass=kDrive_client
