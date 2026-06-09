@@ -2,7 +2,7 @@
 
 # Update and add repositories
 apt-get update
-chmod +x installation_scripts/*.sh
+chmod +x ./linux/installation_scripts/*.sh
 
 # Install basic dependencies for linux
 apt-get install -y ca-certificates \
