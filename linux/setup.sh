@@ -62,7 +62,8 @@ apt-get install -y ca-certificates \
     network-manager-openconnect \
     network-manager-openconnect-gnome \
     flatpak \
-    cmake
+    cmake \
+    gnupg
 curl -sL https://raw.githubusercontent.com/retorquere/zotero-pkg/master/install.sh | bash
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 snap install gedit
@@ -140,3 +141,11 @@ chmod a+r /etc/apt/keyrings/keys.anydesk.com.asc
 echo "deb [signed-by=/etc/apt/keyrings/keys.anydesk.com.asc] https://deb.anydesk.com all main" | tee /etc/apt/sources.list.d/anydesk-stable.list > /dev/null
 apt update
 apt install -y anydesk
+
+# Claude code
+echo "=============================="
+echo "Setting up Claude Code Desktop..."
+curl -fsSLo /usr/share/keyrings/claude-desktop-archive-keyring.asc https://downloads.claude.ai/claude-desktop/key.asc
+gpg --show-keys /usr/share/keyrings/claude-desktop-archive-keyring.asc
+echo "deb [arch=amd64,arm64 signed-by=/usr/share/keyrings/claude-desktop-archive-keyring.asc] https://downloads.claude.ai/claude-desktop/apt/stable stable main" | tee /etc/apt/sources.list.d/claude-desktop.list
+sudo apt update && sudo apt install claude-desktop
