@@ -1,6 +1,29 @@
 #!/bin/bash
 set -e
 
+# Parse command-line arguments
+while [[ "$#" -gt 0 ]]; do
+    case "$1" in
+        -h|--help)
+            echo "Usage: $0"
+            exit 0
+            ;;
+        -*)
+            echo "Unknown option: $1" >&2
+            exit 1
+            ;;
+        *)
+            if [[ $PATH_GIVEN -eq 1 ]]; then
+                echo "Unexpected extra argument: $1" >&2
+                exit 1
+            fi
+            SYNC_PATH="$1"
+            PATH_GIVEN=1
+            shift
+            ;;
+    esac
+done
+
 # ==============================================================================
 # STAGE 1: Update system and install required packages
 # ==============================================================================
@@ -22,11 +45,11 @@ sudo dpkg -i /tmp/ros2-apt-source.deb
 sudo apt update
 sudo apt upgrade
 
-sudo apt install ros-kilted-desktop
-sudo apt install ros-kilted-ros-base
+sudo apt install ros-jazzy-desktop
+sudo apt install ros-jazzy-ros-base
 sudo apt install ros-dev-tools
 
 # ==============================================================================
 # STAGE 4: Setup environment
 # ==============================================================================
-source /opt/ros/kilted/setup.bash
+source /opt/ros/jazzy/setup.bash
