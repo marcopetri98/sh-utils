@@ -31,6 +31,10 @@ apt-get install -y --no-install-recommends \
    libvulkan1
 
 # ==============================================================================
-# STAGE 3: Install Isaac Sim livestream client
+# STAGE 3: Install Isaac Sim
 # ==============================================================================
+# Livestream client
 bash ./linux/installation_scripts/isaac-sim-live-client.sh
+
+# Full Isaac Sim app
+bash ./linux/installation_scripts/isaac-sim-full-app.sh

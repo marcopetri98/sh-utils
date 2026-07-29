@@ -124,10 +124,10 @@ echo "Setting up Discord updater..."
 cp -p ./linux/installation_scripts/discord.sh /home/$SUDO_USER/programs/discord.sh
 sed "s/__USER__/$SUDO_USER/g" ./linux/autostart/discord-updater.desktop > "/home/$SUDO_USER/.config/autostart/discord-updater.desktop"
 
-# Isaac Sim App Launcher
+# Isaac Sim Apps
 if [[ $ROBOTICS -eq 1 ]]; then
     echo "=============================="
-    echo "Setting up Isaac Sim Launcher..."
+    echo "Setting up Isaac Sim Apps..."
     bash ./linux/robotics.sh
     sed "s/__USER__/$SUDO_USER/g" ./linux/applications/isaac-sim.desktop > "/home/$SUDO_USER/.local/share/applications/isaac-sim.desktop"
 fi
