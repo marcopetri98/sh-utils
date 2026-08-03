@@ -118,6 +118,11 @@ else
     echo "Directory created successfully."
 fi
 
+# Install Anytype
+wget -O /tmp/anytype.deb https://anytype-release.fra1.cdn.digitaloceanspaces.com/anytype_0.56.1_amd64.deb
+apt-get install -y /tmp/anytype.deb
+rm /tmp/anytype.deb
+
 # Discord
 echo "=============================="
 echo "Setting up Discord updater..."
