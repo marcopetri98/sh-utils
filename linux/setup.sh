@@ -96,7 +96,10 @@ apt-get install -y filezilla
 # Development
 apt-get install -y git
 bash ./linux/installation_scripts/docker.sh
-snap install code --classic
+
+wget -O /tmp/vscode-install.deb https://update.code.visualstudio.com/latest/linux-deb-x64/stable
+apt-get install -y /tmp/vscode-install.deb
+rm /tmp/vscode-install.deb
 
 # Messaging apps
 snap install telegram-desktop
