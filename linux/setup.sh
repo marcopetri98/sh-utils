@@ -1,4 +1,10 @@
 #!/bin/bash
+set -e
+
+if [[ $EUID -ne 0 ]]; then
+  echo "This script is meant to be run with sudo." >&2
+  exit 1
+fi
 
 # Default variable values
 WORK=0
@@ -47,6 +53,9 @@ while [[ "$#" -gt 0 ]]; do
 done
 
 export ISAAC_SIM_VERSION
+
+# Install commands
+bash ./linux/install_commands.sh
 
 # Update and add repositories
 apt-get update
@@ -103,6 +112,12 @@ if [[ $WORK -eq 1 ]]; then
     bash ./linux/work.sh
 fi
 
+# Isaac Sim Apps
+if [[ $ROBOTICS -eq 1 ]]; then
+    echo "Setting up ROS2..."
+    bash ./linux/ros2.sh
+fi
+
 # Give docker permissions to the user
 groupadd docker
 usermod -aG docker $SUDO_USER
@@ -153,4 +168,4 @@ echo "Setting up Claude Code Desktop..."
 curl -fsSLo /usr/share/keyrings/claude-desktop-archive-keyring.asc https://downloads.claude.ai/claude-desktop/key.asc
 gpg --show-keys /usr/share/keyrings/claude-desktop-archive-keyring.asc
 echo "deb [arch=amd64,arm64 signed-by=/usr/share/keyrings/claude-desktop-archive-keyring.asc] https://downloads.claude.ai/claude-desktop/apt/stable stable main" | tee /etc/apt/sources.list.d/claude-desktop.list
-sudo apt update && sudo apt install claude-desktop
+apt update && apt install claude-desktop
