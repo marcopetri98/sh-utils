@@ -37,6 +37,12 @@ winget install --id DigitalScholar.Zotero --source winget
 winget install --id AnyDesk.AnyDesk --source winget
 Start-Process pwsh -ArgumentList '-NoProfile -Command "& {choco install filezilla -y}"' -Verb RunAs -Wait
 
+# Install Nvidia Nsight Systems for GPU profiling
+Invoke-WebRequest https://developer.nvidia.com/downloads/assets/tools/secure/nsight-systems/2026_4/NsightSystems-2026.4.1.191-3860507.msi -OutFile NsightSystems.msi
+Write-Host "Installing Nsight Systems..."
+Start-Process .\NsightSystems.msi -wait
+rm .\NsightSystems.msi
+
 # AI
 winget install --id Ollama.Ollama --source winget
 
