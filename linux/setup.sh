@@ -86,21 +86,22 @@ snap install gedit
 mkdir -p ~/.icons
 mkdir -p ~/.themes
 
-git clone --depth=1 https://github.com/vinceliuice/WhiteSur-gtk-theme.git tempfolder
-./tempfolder/install.sh -n WhiteSur-Theme -d ~/.themes
+git clone https://github.com/vinceliuice/Colloid-gtk-theme.git tempfolder
+./tempfolder/install.sh -d ~/.themes --tweaks rimless
 rm -rf tempfolder
 
-git clone https://github.com/vinceliuice/Fluent-gtk-theme.git tempfolder
-sed -i 's/_name="\$2"/name="$2"/' ./tempfolder/install.sh
-./tempfolder/install.sh -n Fluent-round --tweaks round -d ~/.themes
-./tempfolder/install.sh -n Fluent-blur --tweaks blur -d ~/.themes
-./tempfolder/install.sh -n Fluent-square --tweaks square -d ~/.themes
+git clone https://github.com/vinceliuice/Orchis-theme.git tempfolder
+./tempfolder/install.sh -d ~/.themes --tweaks solid
+./tempfolder/install.sh -n Orchis-DtD -d ~/.themes --tweaks solid dock
 rm -rf tempfolder
 
-git clone https://github.com/vinceliuice/WhiteSur-icon-theme.git tempfolder
-./tempfolder/install.sh -n WhiteSur-Icons -d ~/.icons
+git clone https://github.com/vinceliuice/Tela-icon-theme.git tempfolder
+./tempfolder/install.sh -c yellow -d ~/.icons
 rm -rf tempfolder
 
+git clone https://github.com/vinceliuice/Colloid-icon-theme.git tempfolder
+./tempfolder/install.sh -t yellow -d ~/.icons
+rm -rf tempfolder
 
 # Install basic software dependencies
 snap install bitwarden
