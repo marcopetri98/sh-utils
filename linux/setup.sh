@@ -72,10 +72,35 @@ apt-get install -y ca-certificates \
     network-manager-openconnect-gnome \
     flatpak \
     cmake \
-    gnupg
+    gnupg \
+    gnome-tweaks \
+    gnome-shell-extension-manager \
+    gnome-themes-extra \
+    gtk2-engines-murrine \
+    sassc
 curl -sL https://raw.githubusercontent.com/retorquere/zotero-pkg/master/install.sh | bash
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 snap install gedit
+
+# Install basic appearance themes
+mkdir -p ~/.icons
+mkdir -p ~/.themes
+
+git clone --depth=1 https://github.com/vinceliuice/WhiteSur-gtk-theme.git tempfolder
+./tempfolder/install.sh -n WhiteSur-Theme -d ~/.themes
+rm -rf tempfolder
+
+git clone https://github.com/vinceliuice/Fluent-gtk-theme.git tempfolder
+sed -i 's/_name="\$2"/name="$2"/' ./tempfolder/install.sh
+./tempfolder/install.sh -n Fluent-round --tweaks round -d ~/.themes
+./tempfolder/install.sh -n Fluent-blur --tweaks blur -d ~/.themes
+./tempfolder/install.sh -n Fluent-square --tweaks square -d ~/.themes
+rm -rf tempfolder
+
+git clone https://github.com/vinceliuice/WhiteSur-icon-theme.git tempfolder
+./tempfolder/install.sh -n WhiteSur-Icons -d ~/.icons
+rm -rf tempfolder
+
 
 # Install basic software dependencies
 snap install bitwarden
