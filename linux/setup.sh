@@ -82,27 +82,6 @@ curl -sL https://raw.githubusercontent.com/retorquere/zotero-pkg/master/install.
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 snap install gedit
 
-# Install basic appearance themes
-mkdir -p ~/.icons
-mkdir -p ~/.themes
-
-git clone https://github.com/vinceliuice/Colloid-gtk-theme.git tempfolder
-./tempfolder/install.sh -d ~/.themes --tweaks rimless
-rm -rf tempfolder
-
-git clone https://github.com/vinceliuice/Orchis-theme.git tempfolder
-./tempfolder/install.sh -d ~/.themes --tweaks solid
-./tempfolder/install.sh -n Orchis-DtD -d ~/.themes --tweaks solid dock
-rm -rf tempfolder
-
-git clone https://github.com/vinceliuice/Tela-icon-theme.git tempfolder
-./tempfolder/install.sh -c yellow -d ~/.icons
-rm -rf tempfolder
-
-git clone https://github.com/vinceliuice/Colloid-icon-theme.git tempfolder
-./tempfolder/install.sh -t yellow -d ~/.icons
-rm -rf tempfolder
-
 # Install basic software dependencies
 snap install bitwarden
 snap install vivaldi
@@ -135,6 +114,32 @@ flatpak install flathub com.usebottles.bottles
 
 # Install uv for python
 curl -LsSf https://astral.sh/uv/install.sh | bash
+
+# Install basic appearance themes
+mkdir -p ~/.icons
+mkdir -p ~/.themes
+
+git clone https://github.com/vinceliuice/Colloid-gtk-theme.git tempfolder
+./tempfolder/install.sh -d ~/.themes --tweaks rimless
+rm -rf tempfolder
+
+git clone https://github.com/vinceliuice/Orchis-theme.git tempfolder
+./tempfolder/install.sh -d ~/.themes --tweaks solid
+./tempfolder/install.sh -n Orchis-DtD -d ~/.themes --tweaks solid dock
+rm -rf tempfolder
+
+git clone https://github.com/vinceliuice/Tela-icon-theme.git tempfolder
+./tempfolder/install.sh -c yellow -d ~/.icons
+rm -rf tempfolder
+
+git clone https://github.com/vinceliuice/Colloid-icon-theme.git tempfolder
+./tempfolder/install.sh -t yellow -d ~/.icons
+rm -rf tempfolder
+
+# Install extensions and load configs
+uv tool install gnome-extensions-cli
+gext install $(cat ./linux/extensions/extensions.txt)
+dconf load /org/gnome/shell/extensions/ < ./linux/extensions/ext-settings.ini
 
 # Work profile
 if [[ $WORK -eq 1 ]]; then
