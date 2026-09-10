@@ -28,6 +28,7 @@ package lists for your own; the structure is meant to make that easy.
 - [Commands installed on your PATH](#commands-installed-on-your-path)
 - [Extra PowerShell utilities](#extra-powershell-utilities)
 - [Notes and caveats](#notes-and-caveats)
+- [License](#license)
 
 ---
 
@@ -364,3 +365,37 @@ These live in [`powershell/`](powershell/) and are not called by `setup.ps1`; ru
 - **This is a personal setup.** The application lists are mine. If you fork this, the package lists in
   `windows/setup.ps1`, `windows/gaming.ps1` and `linux/setup.sh`, plus
   `linux/extensions/extensions.txt`, are the files you will want to edit first.
+
+---
+
+## License
+
+This repository is released under the [PolyForm Noncommercial License 1.0.0](LICENSE) — a permissive
+licence for everything *except* making money with it.
+
+**You may**, for any noncommercial purpose:
+
+- **Use** the scripts on your own machines, as-is.
+- **Copy and redistribute** them, including a modified version.
+- **Fork and modify** them freely — swap the package lists, change the themes, rewrite whatever you like.
+- Use them inside a **charity, school, university, public research body, public health/safety
+  organisation or government institution**: that counts as noncommercial regardless of how the
+  organisation is funded.
+- Use them for **personal study, hobby projects, experiments and private entertainment**.
+
+**You may not**:
+
+- Use them for **commercial purposes** — anything done with an anticipated commercial application,
+  including internal use at a for-profit company, consulting work billed to a client, bundling them into
+  a paid product or service, or selling them in any form.
+- **Sublicense or transfer** your licence to anyone else. Everyone who wants to use this code gets their
+  licence directly from these same terms, not from you.
+
+**You must** keep a copy of the licence (or a link to it) with any copy of the code you pass on.
+
+There is **no warranty**: the scripts install packages, add apt sources and change system configuration
+on the machines you run them on, and they come as-is, with the licensor accepting no liability for what
+happens as a result.
+
+If you want to use any of this commercially, ask me first — the licence explicitly leaves the licensor
+free to grant other terms.
