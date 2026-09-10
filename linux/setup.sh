@@ -77,10 +77,16 @@ apt-get install -y ca-certificates \
     gnome-shell-extension-manager \
     gnome-themes-extra \
     gtk2-engines-murrine \
-    sassc
+    sassc \
+    gawk
 curl -sL https://raw.githubusercontent.com/retorquere/zotero-pkg/master/install.sh | bash
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 snap install gedit
+
+# Install bash completion based on history
+git clone --recursive --depth 1 --shallow-submodules https://github.com/akinomyoga/ble.sh.git
+make -C ble.sh install PREFIX=~/.local
+echo 'source -- ~/.local/share/blesh/ble.sh' >> ~/.bashrc
 
 # Install basic software dependencies
 snap install bitwarden
@@ -140,6 +146,9 @@ rm -rf tempfolder
 uv tool install gnome-extensions-cli
 gext install $(cat ./linux/extensions/extensions.txt)
 dconf load /org/gnome/shell/extensions/ < ./linux/extensions/ext-settings.ini
+
+# Dynamic wallpapers
+flatpak install flathub com.github.maoschanz.DynamicWallpaperEditor
 
 # Work profile
 if [[ $WORK -eq 1 ]]; then
