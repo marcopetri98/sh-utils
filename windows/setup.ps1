@@ -37,11 +37,11 @@ winget install --id DigitalScholar.Zotero --source winget
 winget install --id AnyDesk.AnyDesk --source winget
 Start-Process pwsh -ArgumentList '-NoProfile -Command "& {choco install filezilla -y}"' -Verb RunAs -Wait
 
-# Install Nvidia Nsight Systems for GPU profiling
-Invoke-WebRequest https://developer.nvidia.com/downloads/assets/tools/secure/nsight-systems/2026_4/NsightSystems-2026.4.1.191-3860507.msi -OutFile NsightSystems.msi
-Write-Host "Installing Nsight Systems..."
-Start-Process .\NsightSystems.msi -wait
-rm .\NsightSystems.msi
+# NVIDIA Drivers
+Invoke-WebRequest https://developer.download.nvidia.com/compute/cuda/13.4.1/local_installers/cuda_13.4.1_windows_x86_64.exe -OutFile NvidiaCudaDrivers.exe
+Write-Host "Installing NVIDIA CUDA Drivers..."
+Start-Process .\NvidiaCudaDrivers.exe -wait
+rm .\NvidiaCudaDrivers.exe
 
 # AI
 winget install --id Ollama.Ollama --source winget
