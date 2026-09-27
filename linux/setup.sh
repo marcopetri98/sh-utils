@@ -88,6 +88,9 @@ git clone --recursive --depth 1 --shallow-submodules https://github.com/akinomyo
 make -C ble.sh install PREFIX=~/.local
 echo 'source -- ~/.local/share/blesh/ble.sh' >> ~/.bashrc
 
+# Install homebrew
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
 # Install basic software dependencies
 snap install bitwarden
 snap install vivaldi
