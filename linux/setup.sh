@@ -64,6 +64,7 @@ chmod +x ./linux/*.sh
 
 # Install basic dependencies for linux
 apt-get install -y ca-certificates \
+    build-essential \
     curl \
     apt-transport-https \
     binutils \
@@ -90,6 +91,8 @@ echo 'source -- ~/.local/share/blesh/ble.sh' >> ~/.bashrc
 
 # Install homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+echo >> /home/$SUDO_USER/.bashrc
+echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv bash)"' >> /home/$SUDO_USER/.bashrc
 
 # Install basic software dependencies
 snap install bitwarden
