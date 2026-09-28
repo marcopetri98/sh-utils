@@ -11,7 +11,7 @@ fi
 ################################################################################
 apt-get install -y keychain
 shopt -s nullglob
-chmod 666 -R /home/$SUDO_USER/.ssh
+chmod 600 -R /home/$SUDO_USER/.ssh
 chmod 700 /home/$SUDO_USER/.ssh
 keys=""
 for p in /home/$SUDO_USER/.ssh/*.pub; do
