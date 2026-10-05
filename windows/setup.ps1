@@ -30,6 +30,7 @@ winget install --id MongoDB.Compass.Full --source winget
 winget install --id JGraph.Draw --source winget
 winget install --id EclipseAdoptium.Temurin.25.JDK --source winget
 winget install --id Schniz.fnm --source winget
+winget install --id Gyan.FFmpeg --source winget
 
 # Research
 winget install --id JabRef.JabRef --source winget
