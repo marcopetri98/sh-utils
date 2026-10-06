@@ -18,6 +18,7 @@ winget install --id Spotify.Spotify --source winget
 winget install --id Microsoft.Teams --source winget
 winget install --id Obsidian.Obsidian --source winget
 winget install --id TheDocumentFoundation.LibreOffice --source winget
+winget install --id AnyAssociation.Anytype --source winget
 
 # Development
 winget install --id Chocolatey.Chocolatey --source winget
@@ -30,7 +31,7 @@ winget install --id MongoDB.Compass.Full --source winget
 winget install --id JGraph.Draw --source winget
 winget install --id EclipseAdoptium.Temurin.25.JDK --source winget
 winget install --id Schniz.fnm --source winget
-winget install --id Gyan.FFmpeg --source winget
+winget install --id Gyan.FFmpeg.Shared --source winget
 
 # Research
 winget install --id JabRef.JabRef --source winget
